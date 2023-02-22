@@ -1,0 +1,41 @@
+@import "../../sass/utils/_variables.scss";
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  ul {
+    display: flex;
+    font-size: 24px;
+
+    @media all and (max-width: $max-width) {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+
+  a {
+    color: $primary-color;
+    height: 68px;
+
+    @media all and (max-width: $max-width) {
+      height: 47px;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  &__home {
+    text-decoration: none;
+  }
+  &__about {
+    margin-left: 57px;
+    text-decoration: none;
+
+    @media all and (max-width: $max-width) {
+      margin-left: 10px;
+    }
+  }
+}
