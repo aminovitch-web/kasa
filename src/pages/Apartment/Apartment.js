@@ -2,10 +2,9 @@ import "./_apartment.scss";
 import { useParams, Navigate } from 'react-router-dom';
 import data from "../../json/apartment.json";
 import Slider from "../../components/Slider/Slider";
-// import ApartmentTag from "../../components/ApartmentTag/ApartmentTag";
 import Collapse from "../../components/Collapse/Collapse";
-// import Rate from "./../../components/Rate/Rate";
-// import HostName from "./../../components/HostName/HostName";
+import Rate from "./../../components/Review/Review";
+
 
 export default function Apartment() {
 
@@ -28,14 +27,23 @@ export default function Apartment() {
           <h1 className="apartment__title">{apartment.title}</h1>
           <p className="apartment__location">{apartment.location}</p>
           <div className="apartment__tags">
-            {/* {apartment.tags.map((tag, index) => (
-              <ApartmentTag key={index} getTag={tag} />
-            ))} */}
+            {apartment.tags.map((tag) => (
+              <div className="tag">
+              <p className="tag__text">{tag}</p>
+            </div>
+            ))}
           </div>
         </div>
         <div className="apartment__HostRating">
-          {/* <Rate rating={rating} />
-          <HostName host={host} /> */}
+           <Rate rating={apartment.rating} />
+           <div className="host">
+      <div className="host__name">
+        <p>{apartment.host.name}</p>
+        <p>{apartment.host.name}</p>
+      </div>
+
+      <img src={apartment.host.picture} alt="" className="host__picture" />
+    </div>
         </div>
       </div>
       <div className="apartment__dropdowns">
