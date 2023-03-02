@@ -12,14 +12,14 @@ function Rate(props) {
       {stars.map((star) =>
         rating >= star ? (
           <img
-            key={star.toString()}
+            
             className="rating__icon"
             src={redstar}
             alt=""
           />
         ) : (
           <img
-            key={star.toString()}
+            
             className="rating__icon"
             src={greystar}
             alt=""
