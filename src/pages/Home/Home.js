@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <main className="mainHome">
-         <Banner image={imageHome} text="un test exemple 2" />
+         <Banner image={imageHome} text="Chez vous, partout et ailleurs" />
       <section className="gallery">
         {datas.map((data) => {
         
           return (
             <div class="cardkey" key={data.id}>
-            <Link className="link_card_logement" to={"/logement/"+data.id+""} >
+            <Link className="link_card_logement" to={"/apartment/"+data.id+""}  key={data.id} >
             <Card
               
               title_apartment={data.title}

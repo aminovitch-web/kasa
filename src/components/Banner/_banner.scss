@@ -1,14 +1,18 @@
 @import "../../sass/utils/_variables.scss";
 .banner{
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 63px ;
     max-width: 1240px;
     width: 100%;
-    background-color: black;
-    mix-blend-mode: darken;
+    object-fit: cover;
+    filter: brightness(60%);
     border-radius: 25px;
+
+
+  
 
     @media all and (max-width: $max-width) {
       height: 111px;
@@ -18,7 +22,7 @@
     &__text{
         position: absolute;
         font-size: 48px;
-        color: white;
+        color: #fff;
         z-index: 1;
         @media all and (max-width: $max-width) {
           margin-left: 36px;
@@ -31,7 +35,6 @@
         width: 100%;
         height: 223px;
         border-radius: 25px;
-        opacity: 0.7;
     }
   }
   

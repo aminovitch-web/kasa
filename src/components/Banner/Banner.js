@@ -6,8 +6,8 @@ export default function Banner ({image,text}){
 
 
 <div className="banner">
-<p className="banner__text">{text}</p>
 <img className='banner__img'  src={image} alt="Forest Landscape"></img>
+<p className="banner__text">{text}</p>
 </div>
 
     );

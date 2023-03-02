@@ -12,17 +12,19 @@
   padding-right: 20px;
 
   @media all and (max-width: $max-width) {
-    margin-top: 11px;
-    margin-bottom: 133px;
+    margin-top: 28px;
     font-size: 18px;
+    height:50px;
   }
 
   &__logo img {
     height: 50px;
     width: 180px;
+   
 
     @media all and (max-width: $max-width) {
       height: 47px;
+      margin-left:8px;
     }
   }
 }
