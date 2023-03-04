@@ -21,7 +21,7 @@ export default function Apartment() {
       apartment ? (
 
     <section className="apartment">
-      <Slider props={apartment.pictures} />
+      <Slider pictures={apartment.pictures} />
       <div className="apartment__content">
         <div className="apartment__informations">
           <h1 className="apartment__title">{apartment.title}</h1>

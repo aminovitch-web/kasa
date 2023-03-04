@@ -1,4 +1,28 @@
 @import "../../sass/utils/variables.scss";
+.tag{
+   background: $primary-color;
+  border-radius: 10px;
+  color: $secondary-color;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 68px;
+  text-align: center;
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+
+    @media (max-width: 992px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+}
 
 .apartment {
   margin: 0 100px;
@@ -97,10 +121,14 @@
 
   &__dropdowns {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
+    max-width: 1023px;
+    width: 100%;
+    margin:auto;
+    align-items: center;
 
     @media (max-width: 768px) {
-     gap:10px;
+     
     }
 
     @media (max-width: 992px) {

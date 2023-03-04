@@ -8,11 +8,11 @@ import arrowLeft from "../../assets/arrowLeft.png";
 import arrowRight from "../../assets/arrowRight.png";
 
 
-export default function Slider({ props }) {
+export default function Slider({ pictures }) {
 
   const [current, updateCurrent] = useState(0);
 
-  const length = props.length;
+  const length = pictures.length;
 
  
   const nextSlide = () => {
@@ -25,7 +25,7 @@ export default function Slider({ props }) {
 
   return (
     <div className="slider">
-      {props.map((picture, index) => {
+      {pictures.map((picture, index) => {
         return (
          
           <div
