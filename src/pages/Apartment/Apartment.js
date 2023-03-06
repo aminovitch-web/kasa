@@ -46,8 +46,8 @@ export default function Apartment() {
     </div>
         </div>
       </div>
-      <div className="apartment__dropdowns">
-        <Collapse title="Description" content={apartment.description} />
+      <div class="apartment__dropdowns">
+        <Collapse  title="Description" content={apartment.description} />
         <Collapse
           title="Equipements"
           content={apartment.equipments.map((equipment, index) => (
@@ -56,7 +56,7 @@ export default function Apartment() {
             </li>
           ))}
         />
-      </div>
+        </div>
     </section>
           ) : <Navigate replace to="/error"/>
 }

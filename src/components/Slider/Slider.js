@@ -40,8 +40,11 @@ export default function Slider({ pictures }) {
                 alt="Appartement"
                 className="slider__picture"
               />
+              
             )}
+           <p className='slider__counter'>{current+ 1} / {length}</p>
           </div>
+          
         );
       })}
  
