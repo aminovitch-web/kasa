@@ -13,7 +13,7 @@ function About() {
       <div className="about__collapse">
         {aboutData.map((data,index) => {
           return (
-            <Collapse key={index}  title={data.title} content={data.content} />
+            <Collapse page="about" key={index}  title={data.title} content={data.content} />
           );
         })}
       </div>

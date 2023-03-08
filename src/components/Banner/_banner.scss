@@ -17,7 +17,8 @@
 
     @media all and (max-width: $max-width) {
       height: 111px;
-      border-radius: 10px;
+  
+      padding:7px;
     }
 
     &__text{
@@ -37,6 +38,10 @@
         height: 223px;
         border-radius: 25px;
         filter: brightness(60%);
+
+        @media all and (max-width: $max-width) {
+            border-radius:10 10 10 10;
+        }
     }
   }
   

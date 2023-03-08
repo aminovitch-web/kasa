@@ -20,7 +20,9 @@
     width: inherit;
     height: inherit;
     object-fit: cover;
+    width:1305px;
     border-radius: 25px;
+    filter: brightness(60%);
 
     @media (max-width: 768px) {
       border-radius: 5px;
@@ -44,7 +46,7 @@
   }
 
   &__next {
-    right: 0;
+    right:50px;
   }
 
   &__next-icon {

@@ -119,25 +119,31 @@
   }
 
   &__dropdowns {
-    width:50%;
- 
+    // display: flex;
+    // justify-content: space-between;
+    // gap: 70px;
+    // margin: 30px auto;
+    // width: 95%;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  
+
+
+  @media (max-width: 768px) {
+
   }
 
- 
-  // @media (max-width: 768px) {
+  @media (max-width: 992px) {
+    column-gap: 40px;
+  }
 
-  // }
-
-  // @media (max-width: 992px) {
-  //   column-gap: 40px;
-  // }
-
+  &__collapses{
+    width:50%;
+  }
   &__list {
     padding-bottom: 5px;
   }
 }
 
-#description, #equipement{
-  display:flex;
-  width:500px;
 }
