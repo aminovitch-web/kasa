@@ -13,6 +13,7 @@
     max-width:1243px;
     object-fit: cover;
     border-radius: 10px;
+    filter:brightness(60%);
 
     @media (max-width: 992px) {
       height: 170px;
