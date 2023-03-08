@@ -1,29 +1,16 @@
 @import "../../sass/utils/_variables.scss";
 
-
-
-
 .cardApartment {
+  border-radius: 10px;
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+  width: calc(100%);
 
   
 
-border-radius: 10px;
-height: 340px;
-overflow: hidden;
-position: relative;
-width: calc(100%);
-
-
-@media (max-width: 1230px) {
-  max-height: 280px;
-}
-
-@media (max-width: 1100px) {
-  max-height: 255px;
-}
-
   img {
-    max-width: 340px;
+   
     width: 100%;
 
     filter: brightness(80%);
@@ -31,18 +18,13 @@ width: calc(100%);
     border-radius: 10px;
     object-fit: cover;
     z-index: -1;
-    
+
     @media all and (max-width: $max-width) {
       height: 255px;
-    
-      
-
     }
-
   }
 
   &__title {
-   
     bottom: 0;
     box-sizing: inherit;
     color: #fff;
@@ -52,9 +34,8 @@ width: calc(100%);
     position: absolute;
 
     @media all and (max-width: $max-width) {
-      margin-bottom:15px;
+      margin-bottom: 15px;
     }
-
   }
 }
 
