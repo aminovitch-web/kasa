@@ -12,7 +12,10 @@ export default function Apartment() {
 
   const apartment = data.find((apartment) => apartment.id === productId);
 
-   
+  const namelastname = apartment.host.name.split(" ");
+
+  const [name, lastname] = namelastname;
+
 
 
   return (
@@ -38,8 +41,8 @@ export default function Apartment() {
            <Rate rating={apartment.rating} />
            <div className="host">
       <div className="host__name">
-        <p>{apartment.host.name}</p>
-        <p>{apartment.host.name}</p>
+        <p>{lastname}</p>
+        <p>{name}</p>
       </div>
 
       <img src={apartment.host.picture} alt="" className="host__picture" />

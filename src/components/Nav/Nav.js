@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import "./_nav.scss";
 
 export default function Nav() {
@@ -6,14 +6,16 @@ export default function Nav() {
 		<nav className="navContainer">
 			<ul>
 				<li>
-			<Link to="/" className="navContainer__home">
-				Accueil
-			</Link>
+				<NavLink
+                        to= {`/`} 
+                        className={({ isActive }) => isActive ? "navContainer__homeActive" : "navContainer__home" }>Accueil
+                    </NavLink>
 			    </li>
 				<li>
-			<Link to="/about" className="navContainer__about">
-				A Propos
-			</Link>
+				<NavLink
+                        to= {`/about`} 
+                        className={({ isActive }) => isActive ? "navContainer__aboutActive" : "navContainer__about" }>A propos
+                    </NavLink>
 			</li>
 
 			</ul>
