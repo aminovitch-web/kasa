@@ -91,7 +91,6 @@
 
 
 .apartment {
-  margin: 0 100px;
   color: $primary-color;
   
 
@@ -142,13 +141,24 @@
   }
 
   &__dropdowns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 80px;
-    max-width:1200px;
+   display:flex;
+   justify-content:space-between;
+   
+    //column-gap: 80px;
+    position:relative;
+    
+    .apartment__collapses{
 
+      width:47%;
+    }
     @media (max-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
+      display:flex;
+      flex-direction:column;
+
+      .apartment__collapses{
+
+        width:100%;
+      }
     }
 
     @media (max-width: 992px) {
@@ -160,6 +170,7 @@
 
     &__collapses{
       width:50%;
+      color:red;
     }
   }
 }

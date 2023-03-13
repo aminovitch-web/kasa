@@ -9,8 +9,8 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    max-width:1023px;
     width:100%;
+    max-width:1023px;
     align-items: center;
     background-color:$primary-color;
     border-radius: 7px;
@@ -54,7 +54,7 @@
   &__text {
     background-color: #f7f7f7;
     color: $primary-color;
-    max-width: 1023px;
+    max-width:1023px;
     width:100%;
     border-radius: 5px;
     padding: 40px 12px 27px 20px;

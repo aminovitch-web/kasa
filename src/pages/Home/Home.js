@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <main className="mainHome">
+      <div class="bannerContainer">
          <Banner image={imageHome} text="Chez vous, partout et ailleurs" />
+        </div>
       <section className="gallery">
         {datas.map((data) => {
         

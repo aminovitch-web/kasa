@@ -9,7 +9,9 @@ import "./_about.scss";
 function About() {
   return (
     <div className="about">
+          <div class="bannerContainer">
       <Banner image={imageAbout} text="" />
+      </div>
       <div className="about__collapse">
         {aboutData.map((data,index) => {
           return (

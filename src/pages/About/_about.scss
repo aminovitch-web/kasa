@@ -1,5 +1,15 @@
+@import "../../sass/utils/_variables.scss";
 .about{
     color:black;
     padding:20px;
+
+    .bannerContainer{
+        height:200px;
+        width:100%;
+    
+        @media (max-width: $max-width) {
+          height:170px;
+        }
+      }
 }
 
