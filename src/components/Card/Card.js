@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+
 import "./_card.scss"
 
 export default function Card({img_apartment, title_apartment,  }) {
