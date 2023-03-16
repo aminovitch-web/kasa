@@ -12,6 +12,8 @@ export default function Apartment() {
 
   const apartment = data.find((apartment) => apartment.id === productId);
 
+  if(apartment){
+
   const namelastname = apartment.host.name.split(" ");
 
   const [name, lastname] = namelastname;
@@ -19,9 +21,7 @@ export default function Apartment() {
 
 
   return (
-    <>
-     {
-      apartment ? (
+    
 
     <section className="apartment">
       <Slider pictures={apartment.pictures} />
@@ -65,12 +65,15 @@ export default function Apartment() {
         </div>
         </div>
     </section>
-          ) : <Navigate replace to="/error"/>
-}
 
-
-    </>
-          
   );
-}
+
+          }else return (<Navigate replace to="/Error" />);
+          
+          }
+
+  
+          
+
+
 
