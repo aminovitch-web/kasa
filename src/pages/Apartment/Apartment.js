@@ -50,7 +50,7 @@ export default function Apartment() {
         </div>
       </div>
       <div class="apartment__dropdowns">
-        <div class="apartment__collapses">
+        <div className="apartment__collapses">
         <Collapse  title="Description" content={apartment.description} />
         </div>
         <div class="apartment__collapses">

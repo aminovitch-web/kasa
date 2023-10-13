@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <main className="mainHome">
-      <div class="bannerContainer">
+      <div className="bannerContainer">
          <Banner image={imageHome} text="Chez vous, partout et ailleurs" />
         </div>
       <section className="gallery">
         {datas.map((data) => {
         
           return (
-            <div class="cardkey" key={data.id}>
+            <div className="cardkey" key={data.id}>
             <Link className="link_card_logement" to={"/apartment/"+data.id+""}  key={data.id} >
             <Card
               

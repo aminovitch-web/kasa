@@ -1,6 +1,6 @@
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 import "./_header.scss";
-import Nav from "../Nav/Nav";
+import Nav from "../../../components/Nav/Nav";
 
 
 
