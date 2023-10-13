@@ -1,46 +1,28 @@
-import React, { useState, useEffect } from 'react';
 import "./_apartment.scss";
 import { useParams, Navigate } from 'react-router-dom';
+import data from "../../json/apartment.json";
 import Slider from "../../components/Slider/Slider";
 import Collapse from "../../components/Collapse/Collapse";
 import Rate from "./../../components/Review/Review";
-import { apartmentServices } from '../../services/apartmentServices'; 
+
 
 export default function Apartment() {
+
   const { productId } = useParams();
-  const [apartmentsData, setApartmentsData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const data = await apartmentServices();
-        setApartmentsData(data);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
-      }
-    })();
-  }, []);
+  const apartment = data.find((apartment) => apartment.id === productId);
 
-  if (loading) {
-    return <div>Chargement...</div>; 
-  }
-
-  if (error) {
-    return <div>Erreur lors du chargement des données.</div>;
-  }
-
-  const apartment = apartmentsData.find((apartment) => apartment.id === productId);
-
-  if (!apartment) return (<Navigate replace to="/Error" />);
+  if(apartment){
 
   const namelastname = apartment.host.name.split(" ");
+
   const [name, lastname] = namelastname;
 
+
+
   return (
+    
+
     <section className="apartment">
       <Slider pictures={apartment.pictures} />
       <div className="apartment__content">
@@ -48,39 +30,44 @@ export default function Apartment() {
           <h1 className="apartment__title">{apartment.title}</h1>
           <p className="apartment__location">{apartment.location}</p>
           <div className="apartment__tags">
-            {apartment.tags.map((tag) => (
-              <div className="tag" key={tag}>
-                <p className="tag__text">{tag}</p>
-              </div>
+            {apartment.tags.map((tag, index) => (
+              <div className="tag" key={index}>
+              <p className="tag__text">{tag}</p>
+            </div>
             ))}
           </div>
         </div>
         <div className="apartment__HostRating">
-          <Rate rating={apartment.rating} />
-          <div className="host">
-            <div className="host__name">
-              <p>{lastname}</p>
-              <p>{name}</p>
-            </div>
-            <img src={apartment.host.picture} alt={name} className="host__picture" />
-          </div>
+           <Rate rating={apartment.rating} />
+           <div className="host">
+      <div className="host__name">
+        <p>{lastname}</p>
+        <p>{name}</p>
+      </div>
+
+      <img src={apartment.host.picture} alt="" className="host__picture" />
+    </div>
         </div>
       </div>
       <div className="apartment__dropdowns">
         <div className="apartment__collapses">
-          <Collapse title="Description" content={apartment.description} />
+        <Collapse  title="Description" content={apartment.description} />
         </div>
         <div className="apartment__collapses">
-          <Collapse
-            title="Equipements"
-            content={apartment.equipments.map((equipment, index) => (
-              <li className="apartment__dropdowns__list" key={index}>
-                {equipment}
-              </li>
-            ))}
-          />
+        <Collapse
+          title="Equipements"
+          content={apartment.equipments.map((equipment, index) => (
+            <li className="apartment__dropdowns__list" key={index}>
+              {equipment}
+            </li>
+          ))}
+        />
         </div>
-      </div>
+        </div>
     </section>
+
   );
-}
+
+          }else return (<Navigate replace to="/Error" />);
+          
+          }

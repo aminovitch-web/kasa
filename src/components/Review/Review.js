@@ -9,13 +9,14 @@ export default function Review(props) {
   return (
     <div className="rating">
 
-      {stars.map((star) =>
+      {stars.map((star, index) =>
         rating >= star ? (
           <img
             
             className="rating__icon"
             src={redstar}
             alt=""
+            key={index}
           />
         ) : (
           <img
@@ -23,6 +24,7 @@ export default function Review(props) {
             className="rating__icon"
             src={greystar}
             alt=""
+            key={index}
           />
         )
       )}
