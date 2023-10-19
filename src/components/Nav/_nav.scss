@@ -1,54 +1,62 @@
 @import "../../sass/utils/_variables.scss";
 .navContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  ul {
     display: flex;
-    font-size: 24px;
+    align-items: center;
+    justify-content: flex-end;
 
-    @media all and (max-width: $max-width) {
-      font-size: 12px;
-      text-transform: uppercase;
+    ul {
+        display: flex;
+        font-size: 24px;
+
+        @media all and (max-width: $max-width) {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
     }
-  }
 
-  a {
-    color: $primary-color;
-    height: 68px;
+    a {
+        color: $primary-color;
+        height: 68px;
 
-    @media all and (max-width: $max-width) {
-      height: 47px;
+        @media all and (max-width: $max-width) {
+            height: 47px;
+        }
     }
-  }
 
-  li {
-    list-style: none;
-  }
-
-  &__home {
-    text-decoration: none;
-  }
-  &__about {
-    margin-left: 57px;
-    text-decoration: none;
-
-    @media all and (max-width: $max-width) {
-      margin-left: 10px;
+    li {
+        list-style: none;
     }
-  }
 
-  &__homeActive{
-    text-decoration: underline;
-}
+    &__home {
+        text-decoration: none;
 
-&__aboutActive {
-  margin-left: 57px;
-  text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__about {
+        margin-left: 57px;
+        text-decoration: none;
 
-  @media all and (max-width: $max-width) {
-    margin-left: 10px;
-  }
-}
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media all and (max-width: $max-width) {
+            margin-left: 10px;
+        }
+    }
+
+    &__homeActive {
+        text-decoration: underline;
+    }
+
+    &__aboutActive {
+        margin-left: 57px;
+        text-decoration: underline;
+
+        @media all and (max-width: $max-width) {
+            margin-left: 10px;
+        }
+    }
 }

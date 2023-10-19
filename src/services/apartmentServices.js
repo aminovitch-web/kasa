@@ -14,4 +14,4 @@ export const apartmentServices = async () => {
         console.error("Erreur lors de la récupération des données :", error);
         return false;
     }
-}
+};
