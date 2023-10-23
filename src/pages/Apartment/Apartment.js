@@ -4,6 +4,7 @@ import { useParams, Navigate } from "react-router-dom";
 import Slider from "../../components/Slider/Slider";
 import Collapse from "../../components/Collapse/Collapse";
 import Rate from "./../../components/Review/Review";
+import { apartmentServices } from "../../services/apartmentServices";
 
 export default function Apartment() {
     const { productId } = useParams();
@@ -12,13 +13,7 @@ export default function Apartment() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('../apartment.json')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Erreur lors du chargement des données.");
-                }
-                return response.json();
-            })
+        apartmentServices()
             .then((data) => {
                 setApartmentsData(data);
                 setLoading(false);
