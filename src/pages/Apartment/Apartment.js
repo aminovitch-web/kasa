@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./_apartment.scss";
-//import { apartmentServices } from "../../services/apartmentServices";
 import { useParams, Navigate } from "react-router-dom";
 import Slider from "../../components/Slider/Slider";
 import Collapse from "../../components/Collapse/Collapse";
@@ -12,37 +11,30 @@ export default function Apartment() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    
     useEffect(() => {
-        // (async () => {
-        //     try {
-            
-            fetch('../apartment.json')
-            .then((response) => response.json())
+        fetch('../apartment.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Erreur lors du chargement des données.");
+                }
+                return response.json();
+            })
             .then((data) => {
                 setApartmentsData(data);
-                console.log(data);
-            })
-            
-            
-            
-                
-                
                 setLoading(false);
-                
-        //     } catch (err) {
-        //         setError(err);
-        //         setLoading(false);
-        //     }
-        // })();
+            })
+            .catch((err) => {
+                setError(err.message);
+                setLoading(false);
+            });
     }, []);
-/*
+
     if (loading) {
         return <div>Chargement...</div>;
     }
 
     if (error) {
-        return <div>Erreur lors du chargement des données.</div>;
+        return <div>{error}</div>;
     }
 
     const apartment = apartmentsData.find(
@@ -53,10 +45,8 @@ export default function Apartment() {
 
     const namelastname = apartment.host.name.split(" ");
     const [name, lastname] = namelastname;
-*/
+
     return (
-        <p>test</p>
-        /*
         <section className="apartment">
             <Slider pictures={apartment.pictures} />
             <div className="apartment__content">
@@ -110,6 +100,5 @@ export default function Apartment() {
                 </div>
             </div>
         </section>
-        */
     );
 }

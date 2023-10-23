@@ -12,14 +12,14 @@ export default function Review(props) {
       {stars.map((star) =>
         rating >= star ? (
           <img
-            
+            key={star}
             className="rating__icon"
             src={redstar}
             alt=""
           />
         ) : (
           <img
-            
+            key={star}
             className="rating__icon"
             src={greystar}
             alt=""
