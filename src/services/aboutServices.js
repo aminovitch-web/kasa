@@ -1,5 +1,5 @@
 export const aboutServices = async () => {
-    const URL = "../aboutdata.json";
+    const URL = "../jsonData/aboutdata.json";
     try {
         const response = await fetch(URL);
         if (!response.ok) {
