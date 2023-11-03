@@ -40,7 +40,6 @@ function About() {
                 {aboutData.map((data, index) => {
                     return (
                         <Collapse
-                            page="about"
                             key={index}
                             title={data.title}
                             content={data.content}
