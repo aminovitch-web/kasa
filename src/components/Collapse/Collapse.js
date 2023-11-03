@@ -5,7 +5,7 @@ import "./_collapse.scss";
 
 import arrowdown from "../../assets/arrowdown.png";
 
-function Collapse({ page, content, title }) {
+function Collapse({ content, title }) {
 
   const [isOpen, setIsOpen] = useState(false);
   return (

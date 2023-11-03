@@ -42,7 +42,7 @@ export default function Slider({ pictures }) {
               />
               
             )}
-           <p className='slider__counter'>{current+ 1} / {length}</p>
+          {length > 1 && <p className='slider__counter'>{current + 1} / {length}</p>}
           </div>
           
         );
